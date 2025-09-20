@@ -16,11 +16,14 @@ let items = [
   { id: 2, name: 'Item 2', description: 'Second item' },
 ];
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 
 app.get('/items', (req, res) => {
   res.json(items);
 });
-
 
 app.get('/items/:id', (req, res) => {
   const id = parseInt(req.params.id);
@@ -72,7 +75,6 @@ app.delete('/items/:id', (req, res) => {
 });
 
 
-app.listen(port, (res,req) => {
-    res.send('Hello World!')
+app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
