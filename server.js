@@ -72,6 +72,7 @@ app.delete('/items/:id', (req, res) => {
 });
 
 
-app.listen(port, () => {
+app.listen(port, (res,req) => {
+  res.send('Hello World!')
   console.log(`Server running at http://localhost:${port}`);
 });
